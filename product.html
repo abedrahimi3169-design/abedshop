@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جزئیات محصول</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.product-page{
+    padding:20px 0;
+}
+
+.product-detail{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    background:#0a0a0a;
+    border:2px solid #d4af37;
+box-shadow:0 0 20px rgba(212,175,55,.25);
+    border-radius:25px;
+    padding:30px;
+}
+
+#mainImage{
+    width:100%;
+    border-radius:20px;
+box-shadow:
+0 0 25px rgba(212,175,55,.15);
+}
+.thumbs{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.thumbs img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border:2px solid #d4af37;
+    border-radius:12px;
+    cursor:pointer;
+}
+.product-info h1{
+    margin-bottom:15px;
+}
+ 
+.product-price{
+    color:#d4af37;
+    font-size:40px;
+    font-weight:900;
+    margin:25px 0;
+}
+.product-rating{
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+.features{
+    margin:25px 0;
+}
+
+.features li{
+    margin:10px 0;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+
+    padding:16px 35px;
+
+    background:linear-gradient(
+    145deg,
+    #d4af37,
+    #f1d36b
+    );
+
+    color:#000;
+
+    border-radius:18px;
+
+    font-weight:800;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.25);
+}
+.whatsapp-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 30px rgba(212,175,55,.4);
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:15px;
+    color:#d4af37;
+}
+
+.similar-products{
+    margin-top:80px;
+}
+
+.similar-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.similar-card{
+    background:#111;
+    border:1px solid rgba(212,175,55,.15);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+.similar-card:hover{
+    transform:translateY(-5px);
+    border-color:#d4af37;
+    box-shadow:0 0 20px rgba(212,175,55,.15);
+}
+
+    border:1px solid rgba(212,175,55,.15);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+.similar-card:hover{
+    transform:translateY(-5px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.15);
+}
+
+.similar-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.similar-card h3{
+    padding:15px;
+}
+
+.customer-box{
+    margin-top:60px;
+    background:#0a0a0a;
+    padding:25px;
+    border-radius:20px;
+}
+
+.customer-box p{
+    margin-bottom:15px;
+}
+
+@media(max-width:900px){
+
+.product-detail{
+grid-template-columns:1fr;
+}
+
+.similar-grid{
+grid-template-columns:1fr;
+}
+
+}
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    list-style:none;
+    padding:0;
+    margin:25px 0;
+}
+
+.features li{
+    background:linear-gradient(
+        145deg,
+        #111,
+        #1a1a1a
+    );
+
+    border:1px solid rgba(212,175,55,.2);
+
+    border-radius:18px;
+
+    padding:14px 8px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.features li span{
+    display:block;
+
+    font-size:24px;
+
+    margin-bottom:6px;
+}
+
+.features li{
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#f5f5f5;
+}
+.features li:hover{
+    transform:translateY(-4px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.15);
+}
+@media(max-width:900px){
+
+.product-detail{
+    padding:18px;
+    gap:20px;
+}
+
+.product-info{
+    background:#111;
+    border-radius:20px;
+    padding:18px;
+}
+
+}
+.features{
+    gap:8px;
+}
+
+.features li{
+    padding:8px 4px;
+    border-radius:14px;
+}
+
+.features li span{
+    font-size:22px;
+    margin-bottom:4px;
+}
+
+.features li{
+    font-size:12px;
+}
+
+
+.image-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.95);
+    z-index:999999;
+    justify-content:center;
+    align-items:center;
+}
+
+.image-modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+.image-modal span{
+    position:absolute;
+    top:20px;
+    right:25px;
+    font-size:35px;
+    color:#fff;
+    cursor:pointer;
+}
+.product-logo img{
+    height:100px !important;
+    width:auto !important;
+    max-height:100px !important;
+}
+.product-topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
+.back-top-btn{
+    color:#d4af37;
+    text-decoration:none;
+margin-left:20px;
+    background:#111;
+
+    border:1px solid rgba(212,175,55,.3);
+
+    padding:10px 18px;
+
+    border-radius:15px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    
+}
+.back-top-btn:hover{
+    border-color:#d4af37;
+
+    box-shadow:
+    0 0 15px rgba(212,175,55,.2);
+}
+@media(min-width:901px){
+    .sticky-buy-bar{
+        display:none !important;
+    }
+}
+.product-details{
+    background:#1a1a1a;
+    border:1px solid rgba(212,175,55,.15);
+    border-radius:20px;
+
+    padding:20px;
+
+    margin:20px 0;
+
+    line-height:2;
+}
+.share-btn{
+    background:#111;
+    color:#d4af37;
+    border:1px solid #d4af37;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    margin-bottom:15px;
+}
+.prev-img,
+.next-img{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.5);
+
+    border-radius:50%;
+
+    font-size:30px;
+
+    color:#fff;
+
+    cursor:pointer;
+}
+.prev-img{
+    position:fixed !important;
+    right:30px !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+    z-index:99999999;
+}
+
+.next-img{
+    position:fixed !important;
+    left:30px !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+    z-index:99999999;
+
+}
+.close-modal{
+    position:absolute;
+    top:20px;
+    left:20px;
+    font-size:35px;
+    color:white;
+    cursor:pointer;
+}
+.prev-img{
+    right:30px !important;
+    left:auto !important;
+}
+
+.next-img{
+    left:30px !important;
+    right:auto !important;
+}
+</style>
+
+</head>
+<div class="sticky-buy-bar">
+
+<div class="sticky-price" id="stickyPrice">
+0 تومان
+</div>
+
+<a
+id="stickyWhatsapp"
+class="sticky-buy-btn"
+target="_blank">
+سفارش سریع
+</a>
+
+</div>
+<body>
+<div class="product-topbar">
+
+<a href="index.html" class="product-logo">
+<img src="assets/images/logo.png" alt="logo">
+</a>
+
+<a href="index.html" class="back-top-btn">
+ بازگشت
+</a>
+
+</div>
+<div class="container product-page">
+
+<div id="productContainer"></div>
+
+<div class="similar-products">
+
+<h2 style="margin-bottom:10px">محصولات مشابه</h2>
+
+<div class="similar-grid" id="similarProducts"></div>
+
+</div>
+<div class="similar-products">
+
+<h2 style="margin-bottom:10px">
+اخیراً مشاهده کرده‌اید
+</h2>
+
+<div class="similar-grid" id="recentProducts"></div>
+
+</div>
+<div class="customer-box">
+
+
+</div>
+
+<script src="products.js"></script>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const id = Number(params.get("id"));
+
+const product = products.find(p => p.id === id);
+let recent =
+JSON.parse(localStorage.getItem("recentProducts")) || [];
+
+recent = recent.filter(item => item !== id);
+
+recent.unshift(id);
+
+recent = recent.slice(0,6);
+
+localStorage.setItem(
+"recentProducts",
+JSON.stringify(recent)
+);
+
+if(product){
+document.getElementById("stickyPrice").innerText =
+product.price.toLocaleString("en-US") + " تومان";
+
+document.getElementById("stickyWhatsapp").href =
+`https://wa.me/989904438303?text=${encodeURIComponent(
+"سلام، میخواهم محصول " + product.name + " را سفارش دهم"
+)}`;
+document.getElementById("productContainer").innerHTML = `
+
+<div class="product-detail">
+
+<div class="product-gallery">
+
+<img
+id="mainImage"
+src="${product.images[0]}"
+alt="${product.name}"
+onclick="openImage(this.src)">
+
+<div class="thumbs">
+
+${product.images.map(img => `
+
+<img
+src="${img}"
+onclick="changeImage('${img}')">
+
+`).join("")}
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">${product.category}</span>
+
+<h1>${product.name}</h1>
+
+<div class="product-rating">
+⭐ ${product.rating}
+</div>
+
+<p>${product.description}</p>
+<ul class="features">
+
+<li><span>🛡️</span>اصالت</li>
+
+<li><span>🚚</span>ارسال</li>
+
+<li><span>💎</span>کیفیت</li>
+
+</ul>
+<div class="product-details">
+${product.details || ""}
+</div>
+
+<div class="product-price">
+
+${product.price.toLocaleString("en-US")} تومان
+</div>
+<button class="share-btn" onclick="shareProduct()">
+🔗 اشتراک‌گذاری
+</button>
+
+
+<a
+class="whatsapp-btn"
+target="_blank"
+href="https://wa.me/989904438303?text=سلام، درباره محصول ${product.name} سوال دارم">
+سفارش در واتساپ
+</a>
+
+<br>
+
+<a href="index.html" class="back-btn">
+← بازگشت به فروشگاه
+</a>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+const similar = products
+.filter(p =>
+    p.category === product.category &&
+    p.id !== product.id
+)
+.slice(0,3);
+
+document.getElementById("similarProducts").innerHTML =
+similar.map(p => `
+
+<div class="similar-card" onclick="location.href='product.html?id=${p.id}'">
+
+<img src="${p.images[0]}">
+
+<h3>${p.name}</h3>
+<p class="similar-price">
+${p.price.toLocaleString("en-US")} تومان
+</p>
+</div>
+
+`).join("");
+function changeImage(src){
+
+document
+.getElementById("mainImage")
+.src = src;
+
+}
+function changeImage(src){
+
+document
+.getElementById("mainImage")
+.src = src;
+
+}
+
+function openImage(src){
+
+currentImageIndex =
+product.images.indexOf(src);
+
+document.getElementById("modalImg").src = src;
+
+document.getElementById("imageModal").style.display = "flex";
+
+}
+function closeImage(){
+
+document.getElementById("imageModal").style.display="none";
+
+}
+function shareProduct(){
+
+navigator.share({
+title: product.name,
+url: window.location.href
+});
+
+}
+let currentImageIndex = 0;
+function nextImage(){
+
+currentImageIndex++;
+
+if(currentImageIndex >= product.images.length){
+currentImageIndex = 0;
+}
+
+document.getElementById("modalImg").src =
+product.images[currentImageIndex];
+
+}
+
+function prevImage(){
+
+currentImageIndex--;
+
+if(currentImageIndex < 0){
+currentImageIndex =
+product.images.length - 1;
+}
+
+document.getElementById("modalImg").src =
+product.images[currentImageIndex];
+
+}
+const recentProducts = JSON.parse(
+localStorage.getItem("recentProducts")
+) || [];
+
+const recentItems = products.filter(p =>
+recentProducts.includes(p.id) &&
+p.id !== id
+);
+
+document.getElementById("recentProducts").innerHTML =
+recentItems.map(p => `
+
+<div class="similar-card">
+
+<img src="${p.images[0]}">
+
+<h3>${p.name}</h3>
+
+</div>
+
+`).join("");
+</script>
+
+<div id="imageModal" class="image-modal">
+
+<span class="close-modal" onclick="closeImage()">✕</span>
+
+<span class="prev-img" onclick="prevImage()">❮</span>
+
+<img id="modalImg">
+
+<span class="next-img" onclick="nextImage()">❯</span>
+
+</div>
+
+
+</body>
+</html>

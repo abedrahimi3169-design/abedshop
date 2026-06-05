@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوکس گجت | سیستم هوشمند ۳ صفحه‌ای فرانت‌اند</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="pageLoaderBar" class="top-loader-bar"></div>
+
+  <header class="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo-box" onclick="navigateTo('home', event)">
+        <img src="assets/images/logo.png" alt="LuxGadget Logo" class="brand-logo">
+        <span class="logo-text">لوکس<span class="text-gold">گجت</span></span>
+      </a>
+      
+      <div class="search-wrapper-header">
+        <span class="search-icon-inside">🔍</span>
+        <input type="text" id="headerSearchInput" placeholder="جستجو در بین گجت‌های نایاب و خاص...">
+        <span class="clear-search-btn" id="clearSearch" hidden>✕</span>
+      </div>
+
+      <nav class="navigation-menu" id="navMenu">
+        <a href="#" onclick="navigateTo('home', event)" class="nav-route-link active" id="link-home">✨ صفحه اصلی</a>
+        <a href="#" onclick="navigateTo('categories', event)" class="nav-route-link" id="link-categories">📂 دسته‌بندی‌ها</a>
+        <a href="#" onclick="navigateTo('checkout', event)" class="nav-route-link" id="link-checkout">🧾 حساب و کتاب</a>
+      </nav>
+
+      <div class="header-action-group">
+        <button class="luxury-cart-trigger" id="cartToggle">
+          <span class="cart-icon-visual">🛒</span>
+          <span class="cart-label-text">سبد خرید</span>
+          <span class="cart-counter-badge" id="cartCount">0</span>
+        </button>
+        <button class="mobile-hamburger-btn" id="menuToggle" aria-label="Toggle Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="page-home" class="app-view-page active">
+    <section class="hero-premium-section">
+      <div class="container hero-layout-grid">
+        <div class="hero-dynamic-content">
+          <div class="glow-badge-container">
+            <span class="pulse-dot"></span>
+            <span class="badge-text-inside">کالکشن VIP زمستان ۲۰۲۶</span>
+          </div>
+          <h1 class="hero-main-title">آینده را امروز <br><span class="text-dynamic-gradient">لمس کنید</span></h1>
+          <p class="hero-sub-description">مرجع تخصصی واردات مدرن‌ترین گجت‌های هوشمند، گجت‌های پوشیدنی خاص، لوازم جانبی لوکس و اکسسوری‌های کمیاب دیجیتال با گارانتی تعویض طلایی.</p>
+          <div class="hero-action-buttons">
+            <button class="btn-ux btn-ux-gold" onclick="navigateTo('categories')">👑 کاتالوگ محصولات دسته‌بندی</button>
+            <a href="#aboutSection" class="btn-ux btn-ux-outline">🧭 داستان لوکس گجت</a>
+          </div>
+        </div>
+        <div class="hero-visual-wrapper">
+          <div class="radial-glow-back"></div>
+          <img src="assets/images/hero.png" alt="Premium Gadget Presentation" class="hero-floating-image">
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-showcase-section">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <span class="section-mini-tag">🔥 پیشنهادهای طلایی</span>
+          <h2 class="section-main-heading">محصولات نمونه و شاخص</h2>
+          <div class="decorative-line"></div>
+        </div>
+        
+        <div class="products-home-large-layout" id="featuredProductsContainer">
+          </div>
+      </div>
+    </section>
+
+    <section class="about-premium-section" id="aboutSection">
+      <div class="container about-layout-grid">
+        <div class="about-textual-info">
+          <span class="section-mini-tag">💎 اصالت و اصالت</span>
+          <h2>چرا گجت‌های خود را از ما تهیه می‌کنید؟</h2>
+          <p>لوکس گجت فراتر از یک فروشگاه ساده است؛ پلتفرمی برای دسترسی به تکنولوژی‌های نوین و اکسسوری‌هایی است که سبک زندگی شما را ارتقا می‌دهند. تمام کالاهای موجود مستقیماً از زنجیره تأمین جهانی بارگیری شده و تست‌های تضمین کیفیت را سپری کرده‌اند.</p>
+          <div class="features-iconic-list">
+            <div class="feature-bullet"><span class="icon-holder">✈️</span> <span>ارسال اکسپرس و بیمه کالا</span></div>
+            <div class="feature-bullet"><span class="icon-holder">🛡️</span> <span>ضمانت ۷ روزه بازگشت بی‌قید و شرط</span></div>
+          </div>
+        </div>
+        <div class="about-statistics-grid">
+          <div class="stat-luxury-box">
+            <h3 class="stat-number" data-target="15000">+۱۵,۰۰۰</h3>
+            <p class="stat-desc">ارسال موفق کشوری</p>
+          </div>
+          <div class="stat-luxury-box">
+            <h3 class="stat-number">۲۴/۷</h3>
+            <p class="stat-desc">پشتیبانی آنلاین VIP</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="page-categories" class="app-view-page">
+    <section class="catalog-filtration-section">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <span class="section-mini-tag">📂 تفکیک هوشمند</span>
+          <h2 class="section-main-heading">دسترسی به دسته‌بندی موضوعی</h2>
+          <div class="decorative-line"></div>
+        </div>
+
+        <div class="tabs-scrollable-container" id="categoryTabsWrapper">
+          </div>
+
+        <div class="filter-controls-toolbar">
+          <div class="results-counter-text">
+            نمایش محصولات گروه: <span id="currentActiveCatName" class="text-gold">همه</span>
+          </div>
+          <div class="sort-select-wrapper">
+            <select id="catalogSortEngine" class="custom-premium-select">
+              <option value="default">↕️ مرتب‌سازی: بر اساس چینش پیش‌فرض</option>
+              <option value="low-to-high">📉 قیمت: از ارزان به گران</option>
+              <option value="high-to-low">📈 قیمت: از گران به ارزان</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="catalogEmptyState" class="catalog-empty-wrapper" hidden>
+          <div class="empty-icon">🔍</div>
+          <h3>هیچ گجتی در این گروه پیدا نشد!</h3>
+          <p>کلمه کلیدی دیگری را جستجو کنید یا فیلتر دسته‌بندی را تغییر دهید.</p>
+        </div>
+
+        <div class="products-grid-two-columns-mobile" id="categoryProductsContainer">
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="page-checkout" class="app-view-page">
+    <section class="checkout-accounting-section">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <span class="section-mini-tag">🧾 مدیریت مالی خرید</span>
+          <h2 class="section-main-heading">میز حساب و کتاب نهایی</h2>
+          <div class="decorative-line"></div>
+        </div>
+
+        <div class="accounting-layout-split">
+          <div class="invoice-luxury-container">
+            <div class="invoice-header-box">
+              <h3>📄 پیش‌فاکتور رسمی سیستم</h3>
+              <span class="invoice-status-tag">در انتظار ثبت</span>
+            </div>
+            
+            <div id="invoiceItemsListing" class="invoice-items-scroll-zone">
+              </div>
+
+            <div class="coupon-apply-zone">
+              <input type="text" id="couponCodeInput" placeholder="کد تخفیف داری؟ وارد کن (مثال: LUXURY)">
+              <button class="btn-apply-coupon" onclick="applyDiscountCoupon()">اعمال کد</button>
+            </div>
+
+            <div class="invoice-financial-summary">
+              <div class="summary-line-row">
+                <span>جمع کل اقلام خرید:</span>
+                <span id="finSubtotal">۰ تومان</span>
+              </div>
+              <div class="summary-line-row discount-row" id="couponRowWrapper" hidden>
+                <span>تخفیف ویژه کد اعمال شده:</span>
+                <span id="finDiscount">۰- تومان</span>
+              </div>
+              <div class="summary-line-row">
+                <span>مالیات و عوارض ارزش افزوده:</span>
+                <span style="color:#2ecc71;">۰٪ (معاف)</span>
+              </div>
+              <div class="summary-line-row">
+                <span>هزینه بسته‌بندی و ارسال VIP:</span>
+                <span class="shipping-free-tag">رایگان</span>
+              </div>
+              <div class="summary-line-row grand-total-row">
+                <span>مبلغ نهایی قابل پرداخت:</span>
+                <span id="finGrandTotal">۰ تومان</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shipping-form-luxury-container">
+            <h3>👤 اطلاعات هویتی و محل تحویل</h3>
+            <form id="mainCheckoutForm" onsubmit="processFormToPayment(event)" class="ux-form-layout">
+              <div class="ux-input-group">
+                <label>نام و نام خانوادگی تحویل‌گیرنده:</label>
+                <input type="text" id="custName" required placeholder="مثال: امیرحسین کریمی">
+              </div>
+              <div class="ux-input-group">
+                <label>شماره تلفن همراه (جهت پیامک رهگیری):</label>
+                <input type="tel" id="custPhone" required placeholder="۰۹*********">
+              </div>
+              <div class="ux-input-group">
+                <label>آدرس دقیق محل سکونت / شرکت:</label>
+                <textarea id="custAddress" rows="4" required placeholder="استان، شهر، خیابان اصلی، کوچه، پلاک، واحد..."></textarea>
+              </div>
+              <button type="submit" class="btn-ux btn-ux-gold w-100 premium-checkout-submit">💳 تایید فاکتور و ورود به درگاه بانکی</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-area">
+    <div class="container footer-bottom-credits">
+      <p>© تمامی حقوق معنوی کدهای فرانت‌اند متعلق به فروشگاه لوکس گجت می‌باشد.</p>
+    </div>
+  </footer>
+
+  <aside class="luxury-cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="title-side">
+        <h3>🛒 سبد خرید شما</h3>
+        <span class="sub-label">بررسی و ویرایش کالاها</span>
+      </div>
+      <button id="closeCartDrawerBtn" class="close-drawer-icon">✕</button>
+    </div>
+    
+    <div class="cart-drawer-body-items" id="cartDrawerContainer">
+      </div>
+    
+    <div class="cart-drawer-footer">
+      <div class="subtotal-display-row">
+        <span>مجموع سبد:</span>
+        <strong id="drawerCartTotal">0 تومان</strong>
+      </div>
+      <button class="btn-ux btn-ux-gold w-100" onclick="handleDrawerCheckoutRedirect()">تسویه حساب و صدور فاکتور</button>
+    </div>
+  </aside>
+
+  <div class="ux-global-backdrop" id="globalBackdrop"></div>
+
+  <div id="uxToastNotification" class="ux-toast-container"></div>
+
+  <div id="paymentModalOverlay" class="payment-modal-overlay">
+    <div class="bank-terminal-card">
+      <button id="abortPaymentBtn" class="abort-payment-cross">✕</button>
+      <div class="terminal-brand-header">
+        <span class="terminal-emv-chip">⚙️</span>
+        <h3>درگاه شبیه‌سازی شده شبکه شتاب</h3>
+        <p>اتصال ایمن شاپرک خاورمیانه</p>
+      </div>
+      
+      <div class="terminal-amount-badge">
+        <span>مبلغ فاکتور خرید:</span>
+        <strong id="terminalAmountText">۰ تومان</strong>
+      </div>
+
+      <form id="bankCardForm" class="bank-form-inputs">
+        <div class="ux-input-group">
+          <label>شماره کارت ۱۶ رقمی بانکی:</label>
+          <input type="text" id="bankCardNumber" placeholder="۶۲۷۴-****-****-****" maxlength="19" required style="text-align:center; font-size:16px; letter-spacing:2px;">
+        </div>
+        <div class="bank-form-row-split">
+          <div class="ux-input-group">
+            <label>رمز دوم / اینترنتی:</label>
+            <input type="password" placeholder="****" maxlength="6" required style="text-align:center;">
+          </div>
+          <div class="ux-input-group">
+            <label>کد امنیتی CVV2:</label>
+            <input type="number" placeholder="***" maxlength="4" required style="text-align:center;">
+          </div>
+        </div>
+        <button type="submit" class="btn-execute-payment">🔐 تأیید و کسر وجه از حساب</button>
+      </form>
+
+      <div id="terminalProcessingScreen" class="terminal-processing-wrapper">
+        <div class="luxury-spinner-circle"></div>
+        <p id="terminalStatusMessage">در حال اعتبارسنجی تراکنش مالی...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
